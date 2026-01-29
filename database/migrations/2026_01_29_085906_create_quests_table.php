@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('quests', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('level');
+            $table->string('image')->nullable();
+            $table->text('description');
+            $table->integer('reward_money');
+            $table->string('monster_name');
+            $table->integer('monster_health');
+            $table->integer('monster_damage');
+            $table->string('monster_image')->nullable();
             $table->timestamps();
         });
     }

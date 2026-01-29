@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Quest extends Model
 {
-    /** @use HasFactory<\Database\Factories\QuestFactory> */
-    use HasFactory;
+    protected $fillable = [
+        'name', 'level', 'image', 'description', 'reward_money',
+        'monster_name', 'monster_health', 'monster_damage', 'monster_image'
+    ];
 }

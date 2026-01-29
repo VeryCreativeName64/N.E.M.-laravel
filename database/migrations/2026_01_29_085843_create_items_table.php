@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('level');
+            $table->string('image')->nullable();
+            $table->string('type'); // Itt tárolhatod, hogy 'hat', 'weapon', stb.
+            $table->integer('plus_health')->default(0);
+            $table->integer('plus_damage')->default(0);
             $table->timestamps();
         });
     }
