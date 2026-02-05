@@ -1,15 +1,8 @@
 <?php
 
-
-use App\Http\Controllers\CharacterController;
-use App\Http\Controllers\QuestController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// Karakter adatok lekérése
-Route::get('/character/{id}', [CharacterController::class, 'show']);
-
-// Harc indítása (adatok lekérése)
-Route::get('/battle/{characterId}/{questId}', [QuestController::class, 'startBattle']);
-
-// Harc eredményének mentése (ha a React-ben véget ért a harc)
-Route::post('/battle/result', [QuestController::class, 'completeQuest']);
+Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
+    return $request->user();
+});

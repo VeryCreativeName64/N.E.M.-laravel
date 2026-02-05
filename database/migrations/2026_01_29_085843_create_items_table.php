@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('level');
             $table->string('image')->nullable();
-            $table->string('type'); // Itt tárolhatod, hogy 'hat', 'weapon', stb.
+            $table->string('type'); 
             $table->integer('plus_health')->default(0);
             $table->integer('plus_damage')->default(0);
             $table->timestamps();

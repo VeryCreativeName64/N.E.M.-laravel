@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('password'); // Jelszó tárolása (hash-elve!)
+            $table->string('email');
+            $table->string('password'); 
             $table->integer('level')->default(1);
             $table->integer('base_health')->default(100);
             $table->integer('base_damage')->default(10);
             $table->integer('money')->default(0);
         
-        // Idegen kulcsok az items táblához
             $table->foreignId('hat')->nullable()->constrained('items')->onDelete('set null');
             $table->foreignId('shirt')->nullable()->constrained('items')->onDelete('set null');
             $table->foreignId('pants')->nullable()->constrained('items')->onDelete('set null');
